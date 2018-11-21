@@ -1,0 +1,20 @@
+
+.icon{
+    color: #fdfdfd;
+}
+
+.body-pendiente{
+    background-color: #b0b226;
+}
+
+.body-enviado{
+    background-color: #26b2ad;
+}
+
+.body-cancelado{
+    background-color: #d43710;
+}
+
+h3{
+    color: #fdfdfd;
+}

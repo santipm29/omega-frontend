@@ -1,0 +1,131 @@
+<div class="container py-5">
+  <div class="row py-5">
+    <div class="col-12 ">
+      <div class="card ">
+        <div class="card-header text-white bg-info">
+          <h2 class="text-center">Formulario de pedidos</h2>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="">Fecha</label>
+                <input type="text" name="fecha" id="fecha" disabled class="form-control">
+              </div>
+            </div>
+          </div>
+          <form action="" method="" id="formulario">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="group-form">
+                  <label for="proveedor">Proveedor</label>
+                  <input type="text" name="proveedor" class="form-control" id="proveedor" placeholder="Nit proveedor"
+                    required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="group-form">
+                  <label for="razon">Razón</label>
+                  <input type="text" name="razon" class="form-control" id="razon" placeholder="Razón social" required>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="group-form">
+                  <label for="codigo_punto">Punto de entrega</label>
+                  <input type="text" name="codigo_punto" class="form-control" id="punto_entrega" placeholder="Codigó de punto de entrega"
+                    required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="group-form">
+                  <label for="descripcion">Descripción</label>
+                  <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Descripción"
+                    required>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <div>
+                  <h2 class="text-center">Listado de productos</h2>
+                </div>
+                <table class="table table-striped" id="tabla_producto">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">PLU</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Medida</th>
+                      <th scope="col">Opción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div>
+                  <button class="btn btn-info text-right" id="agregar"><i class="fas fa-plus"></i>
+                    Agregar producto</button>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <h2>Tipo de pedido</h2>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipo_pedido" id="" required>
+                  <label for="tipo_pedido">Regular</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipo_pedido" id="">
+                  <label for="tipo_pedido">Urgente</label>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <h2 class="text-left">Listado de productos</h2>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cedula">Cédula</label>
+                  <input type="text" name="cedula" id="" placeholder="Cédula" class="form-control" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" name="nombre" id="" placeholder="Nombre" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button class="btn btn-danger" type="button" id="limpiar"><i class="fas fa-trash-alt"></i>
+                  Limpiar</button>
+                <button type="submit" class="btn btn-info"><i class="fas fa-save"></i> Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
