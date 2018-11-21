@@ -11,7 +11,7 @@ import { AuthenticationGuard } from './services/authentication.guard';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: HomeComponent, canActivate: [AuthenticationGuard]},
   {path: 'home' , component: HomeComponent, canActivate: [AuthenticationGuard]},
   {path: 'login' , component: LoginComponent},
   {path: 'order/create' , component: CreateComponent, canActivate: [AuthenticationGuard]},
