@@ -4,17 +4,21 @@
 }
 
 .body-pendiente{
-    background-color: #b0b226;
+    background-color: #000000;
 }
 
 .body-enviado{
-    background-color: #26b2ad;
+    background-color: #000000;
 }
 
 .body-cancelado{
-    background-color: #d43710;
+    background-color: #000000;
 }
 
 h3{
     color: #fdfdfd;
+}
+.imagen{
+    width: 200px;
+    height: 200px;
 }

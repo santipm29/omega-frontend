@@ -19,7 +19,6 @@ export class MenuComponent implements OnInit {
   logout(){
     this.authenticationService.logOut()
     .then(()=>{
-      alert('Sesión cerrada');
       this.router.navigate(['login']);
     })
     .catch((error) => {

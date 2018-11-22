@@ -1,57 +1,45 @@
-<div class="container py-5">
-  <div class="row py-5">
+<div class="container py-3">
+  <div class="row">
     <div class="col-12 ">
       <div class="card ">
         <div class="card-header text-white bg-info">
           <h2 class="text-center">Formulario de pedidos</h2>
         </div>
         <div class="card-body">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="form-group">
-                <label for="">Fecha</label>
-                <input type="text" name="fecha" id="fecha" disabled class="form-control">
-              </div>
-            </div>
-          </div>
           <form action="" method="" id="formulario">
             <div class="row">
               <div class="col-md-6">
                 <div class="group-form">
-                  <label for="proveedor">Proveedor</label>
-                  <input type="text" name="proveedor" class="form-control" id="proveedor" placeholder="Nit proveedor"
+                  <label for="proveedor">Nombre Proveedor</label>
+                  <input type="text" name="proveedor" class="form-control" id="nombreProveedor" placeholder="Nombre proveedor"
                     required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="group-form">
-                  <label for="razon">Razón</label>
-                  <input type="text" name="razon" class="form-control" id="razon" placeholder="Razón social" required>
+                  <label for="codigo_punto">Nombre punto de entrega</label>
+                  <input type="text" name="codigo_punto" class="form-control" id="punto_entrega" placeholder="Nombre punto de entrega"
+                    required>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="group-form">
-                  <label for="codigo_punto">Punto de entrega</label>
-                  <input type="text" name="codigo_punto" class="form-control" id="punto_entrega" placeholder="Codigó de punto de entrega"
-                    required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="group-form">
-                  <label for="descripcion">Descripción</label>
-                  <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Descripción"
-                    required>
-                </div>
-              </div>
-            </div>
             <br>
             <div class="row">
               <div class="col-md-12">
                 <div>
                   <h2 class="text-center">Listado de productos</h2>
+                </div>
+                <div class="row py-2">
+                  <div class="col-md-3">
+                    <input type="text"  placeholder="Nombre del producto" class="form-control">
+                  </div>
+                  <div class="col-md-2">
+                      <input type="number" min="1"  placeholder="Cantidad" class="form-control">
+                    </div>
+                  <div class="col-md-2">
+                    <button class="btn btn-info text-right" id="agregar"><i class="fas fa-plus"></i></button>
+                  </div>
                 </div>
                 <table class="table table-striped" id="tabla_producto">
                   <thead>
@@ -68,14 +56,6 @@
 
                   </tbody>
                 </table>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div>
-                  <button class="btn btn-info text-right" id="agregar"><i class="fas fa-plus"></i>
-                    Agregar producto</button>
-                </div>
               </div>
             </div>
             <hr>
@@ -95,27 +75,6 @@
               </div>
             </div>
             <hr>
-            <div class="row">
-              <div class="col-md-6">
-                <div>
-                  <h2 class="text-left">Listado de productos</h2>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="cedula">Cédula</label>
-                  <input type="text" name="cedula" id="" placeholder="Cédula" class="form-control" required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" name="nombre" id="" placeholder="Nombre" class="form-control" required>
-                </div>
-              </div>
-            </div>
             <div class="row">
               <div class="col">
                 <button class="btn btn-danger" type="button" id="limpiar"><i class="fas fa-trash-alt"></i>

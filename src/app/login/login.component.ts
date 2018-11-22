@@ -19,13 +19,16 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.authenticationService.loginWithEmail(this.email, this.password).then( (data) => {
-      swal("Good job!", "Logueado correctamente", "success");
-      console.log(data);
-      this.router.navigate(['home']);
-    }).catch((error) => {
-      swal("Algo salio mal!", error['message'], "error");
-    });
+    if(this.email == null || this.password == null){
+      swal("Algo salio mal!", "Por favor ingresa todos los campos", "error");
+    }else{
+      this.authenticationService.loginWithEmail(this.email, this.password).then( (data) => {
+        this.router.navigate(['home']);
+      }).catch((error) => {
+        swal("Algo salio mal!", "Usuario o contraseña incorrecta", "error");
+      });
+    }
+    
 }
 
 }
