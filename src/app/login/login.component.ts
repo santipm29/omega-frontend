@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+
 import swal from 'sweetalert';
 
 @Component({
@@ -10,8 +11,14 @@ import swal from 'sweetalert';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email:string = null;
-  password: string = null;
+  form = {
+    email:  null,
+    password:  null,
+  }
+  formError = {
+    state: false,
+    message: ''
+  };
   constructor(private authenticationService: AuthenticationService, private userService:UserService,
     private router:Router) { }
 
@@ -19,13 +26,16 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    if(this.email == null || this.password == null){
-      swal("Algo salio mal!", "Por favor ingresa todos los campos", "error");
+    if(this.form.email == null || this.form.password == null){
+      this.formError.state = true;
+      this.formError.message = 'Ingresa todos los campos';
     }else{
-      this.authenticationService.loginWithEmail(this.email, this.password).then( (data) => {
+      this.authenticationService.loginWithEmail(this.form.email, this.form.password).then( (data) => {
         this.router.navigate(['home']);
       }).catch((error) => {
-        swal("Algo salio mal!", "Usuario o contraseña incorrecta", "error");
+        this.formError.state = true;
+        this.formError.message = 'Usuario o contraseña incorrecta';
+        this.form.password = '';
       });
     }
     

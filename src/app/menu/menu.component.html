@@ -1,32 +1,43 @@
-<div>
+<div class="menu">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" [routerLink]="[ '/home']">Omega</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="[ '/home' ]"><i class="fa fa-home"></i> Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="[ '/provider']"><i class="fas fa-industry"></i> Proveedores</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" [routerLink]="[ '/path', routeParam ]" id="navbarPedido" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <i class="fa fa-shopping-cart "> Pedido</i> 
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarPedido">
-              <a class="dropdown-item" [routerLink]="[ '/order/create']"><i class="fas fa-circle-notch"></i> Crear</a>
-              <a class="dropdown-item" [routerLink]="[ '/order/consult' ]"><i class="fas fa-circle-notch"></i> Consultar</a>
-            </div>
-          </li>
-        </ul>
-    
-        <button (click)="logout()" class="btn btn-dark"><i class="fa fa-close"></i> Cerrar sesión</button>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" [routerLink]="[ '/home']">Omega</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" [routerLink]="[ '/home' ]"><i class="fa fa-home"></i> Inicio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[ '/provider']"><i class="fas fa-industry"></i> Proveedores</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarPedido" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <i class="fa fa-shopping-cart "> Pedido</i> 
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarPedido">
+                    <a class="dropdown-item" [routerLink]="[ '/order/create']"><i class="fas fa-circle-notch"></i> Crear</a>
+                    <a class="dropdown-item" [routerLink]="[ '/order/consult' ]"><i class="fas fa-circle-notch"></i> Consultar</a>
+                  </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarSesion" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fa fa-user "> Sesión</i> 
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarSesion">
+                      <a class="dropdown-item" [routerLink]="[ '/order/create']"><i class="fas fa-circle-notch"></i> Crear usuario</a>
+                      <a (click)="logout()" class="dropdown-item"><i class="fas fa-circle-notch"></i> Cerrar sesión</a>
+                    </div>
+                  </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </nav>
   </header>
 </div>
