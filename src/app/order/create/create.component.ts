@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import swal from 'sweetalert';
 import { UserService } from 'src/app/services/user.service';
 import { OrderService } from 'src/app/services/order.service';
 import {Order} from '../../interfaces/order';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,14 +13,11 @@ import {Order} from '../../interfaces/order';
 export class CreateComponent implements OnInit {
   id:string = '';
   order: Order;
-  constructor(private userService: UserService, private orderService:OrderService) { 
+  constructor(private userService: UserService, private orderService:OrderService, private router:Router) { 
 
-    
-    console.log(this.order);
   }
 
 
- 
   ngOnInit() {
 
 }

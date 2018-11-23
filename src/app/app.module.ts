@@ -19,6 +19,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { UserComponent } from './users/user/user.component';
+import { PendingComponent } from './order/pending/pending.component';
+
 
 
 
@@ -33,7 +35,9 @@ import { UserComponent } from './users/user/user.component';
     ConfirmComponent,
     MenuComponent,
     ProviderComponent,
-    UserComponent
+    UserComponent,
+    PendingComponent,
+
    ],
   imports: [
     BrowserModule,

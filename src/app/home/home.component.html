@@ -57,7 +57,7 @@
     <div class="col-md-6 ">
       <div class="card py-2">
         <div class="body">
-            <a [routerLink]="[ '/order/consult']"><img class="imagen img-fluid" src="../../assets/img/consultar.png" alt=""></a>
+            <a  (click)="submit()"><img class="imagen img-fluid" src="../../assets/img/consultar.png" alt=""></a>
             <h2>Consultar pedido</h2>
         </div>
       </div>
@@ -76,7 +76,7 @@
     <div class="col-md-6">
       <div class="card py-2">
         <div class="body">
-            <img class="imagen img-fluid" src="../../assets/img/verificar.png" alt="">
+          <a [routerLink]="[ '/order/pending']"><img class="imagen img-fluid" src="../../assets/img/verificar.png" alt=""></a>
             <h2>Verificar pedido</h2>
         </div>
       </div>
@@ -84,3 +84,5 @@
   </div>
 </div>
 </div>
+
+
