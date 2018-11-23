@@ -8,6 +8,7 @@ import { ConsultComponent } from './order/consult/consult.component';
 import { ConfirmComponent } from './order/confirm/confirm.component';
 import { ProviderComponent } from './provider/provider.component';
 import { AuthenticationGuard } from './services/authentication.guard';
+import { UserComponent } from './users/user/user.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'order/edit', component: EditComponent, canActivate: [AuthenticationGuard]},
   {path: 'order/consult' , component: ConsultComponent, canActivate: [AuthenticationGuard]},
   {path: 'order/confirm' , component: ConfirmComponent, canActivate: [AuthenticationGuard]},
-  {path: 'provider' , component: ProviderComponent, canActivate: [AuthenticationGuard]}
+  {path: 'provider' , component: ProviderComponent, canActivate: [AuthenticationGuard]},
+  {path: 'user/create', component: UserComponent, canActivate: [AuthenticationGuard]}
   
 ];
 

@@ -1,0 +1,47 @@
+<div class="container  py-2">
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 text-center align-self-center">
+      <i class="fas fa-users fa-5x"></i>
+      <h1 class="h3 mb-3 font-weight-normal">Crear usuario</h1>
+    </div>
+  </div>
+  <hr>
+  <form (ngSubmit)="validate()">
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="formm-group">
+          <label for="">Nombre</label>
+          <input [(ngModel)]="name" type="text" name="name" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-md-6 ">
+        <div class="formm-group">
+          <label for="">Apellido</label>
+          <input [(ngModel)]="surname" type="text" name="surname" class="form-control" required>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="formm-group">
+          <label for="">Correo electrónico</label>
+          <input [(ngModel)]="email" type="email" name="email" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-md-6 ">
+        <div class="formm-group">
+          <label for="">Contraseña</label>
+          <input [(ngModel)]="password" type="password" name="password" class="form-control" minlength="6" maxlength="10" required>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="validateForm" class="alert alert-danger mt-2 text-center">Todos los campos son obligatorios</div>
+    <br>
+    <div class="row" >
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-lg btn-dark btn-block" >Guardar</button>
+      </div>
+    </div>
+  </form>
+
+</div>

@@ -12,7 +12,7 @@
         <input  [(ngModel)]="form.email" name="email" type="email"  class="form-control"  required autofocus>
         <div class="form-group py-2">
           <label for="" class="">Contraseña</label>
-          <input [(ngModel)]="form.password" name="password" type="password"  class="form-control" required  >
+          <input [(ngModel)]="form.password" name="password" type="password"  class="form-control" maxlength="10" required  >
         </div>
         <button type="submit" class="btn btn-lg btn-dark btn-block" >Ingresar</button>
         <div *ngIf="formError.state == true" class="alert alert-danger mt-2 text-center">{{ formError.message }}</div>

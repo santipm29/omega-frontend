@@ -3,7 +3,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
-import swal from 'sweetalert';
+
 
 @Component({
   selector: 'app-login',
