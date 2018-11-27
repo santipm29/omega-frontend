@@ -10,6 +10,7 @@ import { PendingComponent } from './order/pending/pending.component';
 import { ProviderComponent } from './provider/provider.component';
 import { AuthenticationGuard } from './services/authentication.guard';
 import { UserComponent } from './users/user/user.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 const routes: Routes = [
@@ -23,8 +24,7 @@ const routes: Routes = [
   {path: 'order/pending', component: PendingComponent, canActivate: [AuthenticationGuard]},
   {path: 'provider' , component: ProviderComponent, canActivate: [AuthenticationGuard]},
   {path: 'user/create', component: UserComponent, canActivate: [AuthenticationGuard]},
-
-
+  {path: '**', component:PagenotfoundComponent, canActivate: [AuthenticationGuard]}
   
 ];
 

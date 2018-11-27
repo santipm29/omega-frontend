@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import swal from 'sweetalert';
 
 
 
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
     state: false,
     message: ''
   };
+  emailReset:string = '';
+  operation:string = 'login';
   constructor(private authenticationService: AuthenticationService, private userService:UserService,
     private router:Router) { }
 
@@ -26,6 +29,9 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+
+
+
     if(this.form.email == null || this.form.password == null){
       this.formError.state = true;
       this.formError.message = 'Ingresa todos los campos';
@@ -38,7 +44,16 @@ export class LoginComponent implements OnInit {
         this.form.password = '';
       });
     }
-    
+}
+
+reset(){
+  this.authenticationService.resetPassword(this.emailReset).then((data) =>{
+    this.emailReset = '';
+    swal("¡Revisa correo!", "Se envio un correo para restablecer la contraseña", "success");
+  }).catch((error) =>{
+    swal("¡Ups!", "Revisa el correo electronico ingresado", "error");
+    console.log(error);
+  })
 }
 
 }

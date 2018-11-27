@@ -21,5 +21,8 @@ export class AuthenticationService {
   logOut(){
     return this.angularFireAuth.auth.signOut();
 }
+resetPassword(email){
+  return this.angularFireAuth.auth.sendPasswordResetEmail(email);
+}
 
 }

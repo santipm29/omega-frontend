@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { environment } from '../environments/environment';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { UserComponent } from './users/user/user.component';
 import { PendingComponent } from './order/pending/pending.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 
@@ -37,11 +39,13 @@ import { PendingComponent } from './order/pending/pending.component';
     ProviderComponent,
     UserComponent,
     PendingComponent,
+    PagenotfoundComponent,
 
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, 
