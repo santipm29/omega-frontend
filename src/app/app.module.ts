@@ -26,6 +26,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     AngularFireAuthModule, 
     AngularFireStorageModule, 
     AngularFireDatabaseModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

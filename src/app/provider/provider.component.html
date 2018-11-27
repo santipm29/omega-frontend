@@ -1,3 +1,23 @@
-<p>
-  provider works!
-</p>
+<div class="container">
+  <div class="mb-2">
+    <h1 class="text-center">Lista de proveedores</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nit</th>
+          <th scope="col">Razón social</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of proveedor">
+          <td>{{item.codproveedor}}</td>
+          <td>{{item.nit}}</td>
+          <td>{{item.razonsocial}}</td>
+          <td><button class="btn btn-info">Productos</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
