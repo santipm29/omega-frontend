@@ -22,6 +22,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { UserComponent } from './users/user/user.component';
 import { PendingComponent } from './order/pending/pending.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ReportComponent } from './report/report.component';
 
 
 
@@ -41,6 +42,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     UserComponent,
     PendingComponent,
     PagenotfoundComponent,
+    ReportComponent,
 
    ],
   imports: [

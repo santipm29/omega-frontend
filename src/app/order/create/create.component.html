@@ -11,20 +11,39 @@
             <div class="col-md-6">
               <div class="group-form">
                 <label for="proveedor">Nombre Proveedor</label>
-                <select [(ngModel)]="nombreproveedor" class="form-control">
-                  <option *ngFor="let item of proveedor" (click)="prueba(item.codproveedor)">{{item.razonsocial}}</option>
+                <select  class="form-control">
+                  <option *ngFor="let item of proveedor" (click)="listProduct(item.codproveedor,item.nit,item.razonsocial)">{{item.razonsocial}}</option>
                 </select>
               </div>
             </div>
             <div class="col-md-6">
               <div class="group-form">
                 <label for="codigo_punto">Nombre punto de entrega</label>
-                <input [(ngModel)]="puntoventa" type="text" class="form-control" id="punto_entrega" placeholder="Nombre punto de entrega"
-                  required>
+                <input [(ngModel)]="puntoventa" type="text" class="form-control" id="punto_entrega" placeholder="Nombre punto de entrega">
               </div>
             </div>
           </div>
           <br>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="">Código proveedor</label>
+                <input [(ngModel)]="codproveedor" type="text" class="form-control" disabled>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="">Nit</label>
+                <input [(ngModel)]="nit" type="text" class="form-control" disabled>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="">Nombre Proveedor</label>
+                <input [(ngModel)]="nombreproveedor" type="text" class="form-control" disabled>
+              </div>
+            </div>
+          </div>
           <br>
           <div class="row">
             <div class="col-md-12">
@@ -33,28 +52,35 @@
               </div>
               <div class="row py-2">
                 <div class="col-md-3">
-                  <input [(ngModel)]="nombre" type="text" placeholder="Nombre del producto" class="form-control">
+                  <select [(ngModel)]="nombreproducto" class="form-control">
+                    <option (click)="codproducto = product.codproducto;descripcion = product.descripcion" *ngFor="let product of productos">{{ product.descripcion }}</option>
+                  </select>
                 </div>
                 <div class="col-md-2">
                   <input [(ngModel)]="cantidad" type="number" min="1" placeholder="Cantidad" class="form-control">
                 </div>
                 <div class="col-md-2">
-                  <button (click)="addProduct()" class="btn btn-info text-right" id="agregar"><i class="fas fa-plus"></i></button>
+                  <button (click)="addProduct()" class="btn btn-info text-right" title="Agregar producto"><i class="fas fa-plus"></i></button>
                 </div>
               </div>
               <table class="table table-striped" id="tabla_producto">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">PLU</th>
                     <th scope="col">Descripción</th>
                     <th scope="col">Cantidad</th>
                     <th scope="col">Medida</th>
-                    <th scope="col">Opción</th>
+                    <th scope="col" >Opción</th>
                   </tr>
                 </thead>
                 <tbody>
-
+                    <tr>
+                        <th></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button class="btn btn-danger" title="Eliminar producto"><i class="fas fa-trash"></i></button> </td>
+                      </tr>
                 </tbody>
               </table>
             </div>
@@ -83,7 +109,7 @@
               <button type="submit" class="btn btn-info"><i class="fas fa-save"></i> Enviar</button>
             </div>
             <div class="col-md-6  align-self-end">
-                <a [routerLink]="[ '/home']" class="btn btn-info"><i class="fas fa-stop"></i> Cancelar</a>
+              <a [routerLink]="[ '/home']" class="btn btn-info"><i class="fas fa-times "></i> Cancelar</a>
             </div>
           </div>
         </div>

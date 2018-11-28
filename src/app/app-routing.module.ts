@@ -11,6 +11,7 @@ import { ProviderComponent } from './provider/provider.component';
 import { AuthenticationGuard } from './services/authentication.guard';
 import { UserComponent } from './users/user/user.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ReportComponent } from './report/report.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'order/pending', component: PendingComponent, canActivate: [AuthenticationGuard]},
   {path: 'provider' , component: ProviderComponent, canActivate: [AuthenticationGuard]},
   {path: 'user/create', component: UserComponent, canActivate: [AuthenticationGuard]},
+  {path: 'report' , component: ReportComponent, canActivate: [AuthenticationGuard]},
   {path: '**', component:PagenotfoundComponent, canActivate: [AuthenticationGuard]}
   
 ];

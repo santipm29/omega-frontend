@@ -14,7 +14,7 @@ private URL = 'http://192.168.11.21:8080/consultasPedido-1.0-SNAPSHOT/webresourc
 }
 
   getProducts(id){
-    return this.http.get(this.URL + `.productos/${id}`);
+    return this.http.get(this.URL + `.productos/proveedor/${id}`);
   }
 
 }

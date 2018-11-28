@@ -45,44 +45,41 @@
   </div>
   <hr>
   <div class="text-center">
-  <div class="row py-3">
-    <div class="col-md-6 ">
-      <div class="card py-2">
-        <div class="body">
-          <a [routerLink]="[ '/order/create' ]"><img class="imagen img-fluid" src="../../assets/img/crear.png" alt=""></a>
-          <h2>Realizar pedido</h2>
+    <div class="row py-3">
+      <div class="col-md-3">
+        <div class="card py-2">
+          <div class="body">
+            <a [routerLink]="[ '/order/create' ]"><img class="imagen img-fluid" src="../../assets/img/crear.png" alt="Realizar pedido"></a>
+            <h2>Realizar pedido</h2>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6 ">
-      <div class="card py-2">
-        <div class="body">
-            <a  (click)="submit()"><img class="imagen img-fluid" src="../../assets/img/consultar.png" alt=""></a>
+      <div class="col-md-3 ">
+        <div class="card py-2">
+          <div class="body">
+            <a (click)="submit()"><img class="imagen img-fluid" src="../../assets/img/consultar.png" alt="Consultar pedido"></a>
             <h2>Consultar pedido</h2>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row py-3">
-    <div class="col-md-6">
-      <div class="card py-2">
-        <div class="body">
-            <img class="imagen img-fluid" src="../../assets/img/editar.png" alt="">
-            <h2>Editar pedido</h2>
+      <div class="col-md-3">
+        <div class="card py-2">
+          <div class="body">
+            <a [routerLink]="[ '/report']"><img class="imagen img-fluid" src="../../assets/img/reporte.png" alt="Reportes"></a>
+            <h2>Reportes</h2>
+          </div>
         </div>
       </div>
-    
-    </div>
-    <div class="col-md-6">
-      <div class="card py-2">
-        <div class="body">
-          <a [routerLink]="[ '/order/pending']"><img class="imagen img-fluid" src="../../assets/img/verificar.png" alt=""></a>
+      <div class="col-md-3">
+        <div class="card py-2">
+          <div class="body">
+            <a [routerLink]="[ '/order/pending']"><img class="imagen img-fluid" src="../../assets/img/verificar.png"
+                alt="Verificar pedido"></a>
             <h2>Verificar pedido</h2>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <hr>
 </div>
-</div>
-
-

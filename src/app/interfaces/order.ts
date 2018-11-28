@@ -6,7 +6,6 @@ export interface Order {
     codUsuario: string;
     productos: [{
         PLU: number;
-        descripcion: string;
         cantidad: number;
     }];
     estadoBodega: number;
