@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProviderService } from 'src/app/services/provider.service';
 import { Provider } from '../interfaces/provider';
+import {Product} from '../interfaces/product';
 
 @Component({
   selector: 'app-provider',
@@ -9,6 +10,8 @@ import { Provider } from '../interfaces/provider';
 })
 export class ProviderComponent implements OnInit {
 proveedor: Provider[];
+productos: Product[];
+page: number = 1; 
   constructor(private providerService:ProviderService) { }
 
   ngOnInit() {
@@ -16,6 +19,13 @@ proveedor: Provider[];
     .subscribe((data: Provider[])=>{
       this.proveedor = data;
       console.log(data);
+    });
+  }
+
+  showProduct(codigo){
+    this.providerService.getProducts(codigo)
+    .subscribe((data: Product[])=>{
+      this.productos = data;
     });
   }
 

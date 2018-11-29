@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="proveedor">
   <div class="mb-2">
     <h1 class="text-center">Lista de proveedores</h1>
     <table class="table">
@@ -11,13 +11,45 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of proveedor">
+        <tr *ngFor="let item of proveedor | paginate: { itemsPerPage: 7, currentPage: page}">
           <td>{{item.codproveedor}}</td>
           <td>{{item.nit}}</td>
           <td>{{item.razonsocial}}</td>
-          <td><button class="btn btn-info">Productos</button></td>
+          <td><button class="btn btn-info" data-toggle="modal" data-target="#modal" (click)="showProduct(item.codproveedor)">Productos</button></td>
         </tr>
       </tbody>
     </table>
+    <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+  </div>
+</div>
+<div id="modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center">Productos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+              <th>Producto</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of productos">
+                  <td >{{item.descripcion}}</td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,13 +1,11 @@
+import {Producto} from './producto';
 
-export interface Order {
+export class Order {
     fechaHoraPedido: string;
     tipoPedido: string;
     puntoEntrega: number;
     codUsuario: string;
-    productos: [{
-        PLU: number;
-        cantidad: number;
-    }];
+    productos: Producto[];
     estadoBodega: number;
     estadoProveedor: number;
     estadoPedido: number;

@@ -3,6 +3,6 @@
     name: string;
     surname?: string;
     email: string;
-    id: any;
+    uid: any;
     status?: string;
 }

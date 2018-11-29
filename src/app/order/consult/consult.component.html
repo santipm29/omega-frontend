@@ -1,5 +1,28 @@
 <div class="container py-5">
   <div class="row text-center">
-    <h1>Número de pedido</h1>
+    <h1><strong>Número de pedido: </strong>{{codigo_pedido}}</h1>
   </div>
+  <hr>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Fecha pedido</th>
+        <th>Tipo pedido</th>
+        <th>Estado bodega</th>
+        <th>Estado proveedor</th>
+        <th>Estado pedido</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td>{{order.fechaHoraPedido}}</td>
+        <td> {{order.tipoPedido}}</td>
+        <td>{{order.estadoBodega}}</td>
+        <td>{{order.estadoProveedor}}</td>
+        <td>{{order.estadoPedido}}</td>
+        <td><button class="btn btn-info" (click)="showProduct()">Ver productos</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

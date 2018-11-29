@@ -12,6 +12,7 @@
               <div class="group-form">
                 <label for="proveedor">Nombre Proveedor</label>
                 <select  class="form-control">
+                    <option></option>
                   <option *ngFor="let item of proveedor" (click)="listProduct(item.codproveedor,item.nit,item.razonsocial)">{{item.razonsocial}}</option>
                 </select>
               </div>
@@ -53,7 +54,8 @@
               <div class="row py-2">
                 <div class="col-md-3">
                   <select [(ngModel)]="nombreproducto" class="form-control">
-                    <option (click)="codproducto = product.codproducto;descripcion = product.descripcion" *ngFor="let product of productos">{{ product.descripcion }}</option>
+                    <option></option>
+                    <option (click)="codproducto = product.codproducto;descripcion = product.descripcion;medida = product.codmedida.descripcion" *ngFor="let product of productos">{{ product.descripcion }}</option>
                   </select>
                 </div>
                 <div class="col-md-2">
@@ -74,12 +76,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button class="btn btn-danger" title="Eliminar producto"><i class="fas fa-trash"></i></button> </td>
+                    <tr *ngFor="let item of product">
+                        <th>{{ item.plu }}</th>
+                        <td>{{ item.descripcion }}</td>
+                        <td>{{ item.cantidad }}</td>
+                        <td>{{ item.medida }}</td>
+                        <td><button  (click)="delete(item.plu)" class="btn btn-danger" title="Eliminar producto"><i class="fas fa-trash"></i></button> </td>
                       </tr>
                 </tbody>
               </table>
@@ -92,11 +94,11 @@
                 <h2>Tipo de pedido</h2>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipo_pedido" id="" required>
+                <input  [(ngModel)]="tipoPedido" value="Regular" class="form-check-input" type="radio" required>
                 <label for="tipo_pedido">Regular</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipo_pedido" id="">
+                <input  [(ngModel)]="tipoPedido" value="Urgente" class="form-check-input" type="radio">
                 <label for="tipo_pedido">Urgente</label>
               </div>
             </div>
@@ -106,7 +108,7 @@
             <div class="col-md-6  align-self-start">
               <button class="btn btn-danger" type="button" id="limpiar"><i class="fas fa-trash-alt"></i>
                 Limpiar</button> &nbsp;
-              <button type="submit" class="btn btn-info"><i class="fas fa-save"></i> Enviar</button>
+              <button (click)="submit()" type="submit" class="btn btn-info"><i class="fas fa-save"></i> Enviar</button>
             </div>
             <div class="col-md-6  align-self-end">
               <a [routerLink]="[ '/home']" class="btn btn-info"><i class="fas fa-times "></i> Cancelar</a>
