@@ -1,12 +1,14 @@
 import {Producto} from './producto';
 
 export class Order {
-    fechaHoraPedido: string;
+    fecha: Date;
     tipoPedido: string;
+    codProveedor: number;
+    codPuntoEntrega: number;
     puntoEntrega: number;
     codUsuario: string;
     productos: Producto[];
-    estadoBodega: number;
-    estadoProveedor: number;
-    estadoPedido: number;
+    estadobodega: number;
+    estadoproveedor: number;
+    estadopedido: number;
 }

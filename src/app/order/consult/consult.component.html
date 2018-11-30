@@ -3,26 +3,68 @@
     <h1><strong>Número de pedido: </strong>{{codigo_pedido}}</h1>
   </div>
   <hr>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Fecha pedido</th>
-        <th>Tipo pedido</th>
-        <th>Estado bodega</th>
-        <th>Estado proveedor</th>
-        <th>Estado pedido</th>
-        <th>Opciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr >
-        <td>{{order.fechaHoraPedido}}</td>
-        <td> {{order.tipoPedido}}</td>
-        <td>{{order.estadoBodega}}</td>
-        <td>{{order.estadoProveedor}}</td>
-        <td>{{order.estadoPedido}}</td>
-        <td><button class="btn btn-info" (click)="showProduct()">Ver productos</button></td>
-      </tr>
-    </tbody>
-  </table>
+  <ng-container *ngIf="order; else elseTemplate">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Fecha pedido</th>
+          <th>Tipo pedido</th>
+          <th>Estado bodega</th>
+          <th>Estado proveedor</th>
+          <th>Estado pedido</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td>{{order.fechaHoraPedido}}</td>
+          <td> {{order.tipoPedido}}</td>
+          <td>{{order.estadoBodega}}</td>
+          <td>{{order.estadoProveedor}}</td>
+          <td>{{order.estadoPedido}}</td>
+          <td><button class="btn btn-info" data-toggle="modal" data-target="#modal" >Ver productos</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <h3>El número de pedido no existe</h3>
+  </ng-template>
+  
+  
+</div>
+<div id="modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center">Productos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+              <th>Plu</th>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of order.productos">
+                  <td>{{item.plu}}</td>
+                  <td>{{item.descripcion}}</td>
+                  <td>{{item.cantidad}}</td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>

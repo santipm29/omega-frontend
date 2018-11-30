@@ -1,4 +1,4 @@
 export interface Producto {
-    cantidad:Number,
+    cantidadProducto:Number,
     PLU:Number
 }

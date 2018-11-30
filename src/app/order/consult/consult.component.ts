@@ -23,7 +23,6 @@ export class ConsultComponent implements OnInit {
     this.orderService.getOrder(this.codigo_pedido)
     .subscribe((data: Order)=>{
       this.order = data;
-      console.log(this.order);
     });
   }
 

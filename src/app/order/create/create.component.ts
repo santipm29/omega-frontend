@@ -7,6 +7,7 @@ import {Product} from '../../interfaces/product';
 import { Provider } from '../../interfaces/provider';
 import { ProviderService } from 'src/app/services/provider.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import swal from 'sweetalert';
 
 
 @Component({
@@ -64,15 +65,18 @@ export class CreateComponent implements OnInit {
 
   addProduct() : void{
     if(this.descripcion == null  || this.cantidad == null || this.codproducto == null){
-      alert('Ingresa todos los datos del producto');
+      swal("Ingresa todos los datos del producto");
+    }else
+    if(this.cantidad == 0){
+      swal("Ingresa una cantidad diferente de cero");
     }else{
       let product = {plu:this.codproducto,descripcion:this.descripcion,cantidad:this.cantidad,medida:this.medida };
-      let p = {PLU:this.codproducto,cantidad:this.cantidad };
+      let p = {PLU:this.codproducto,cantidadProducto:this.cantidad };
       this.product.push(product);
       this.cantidad = null;
       this.order.productos.push(p);
     }
-   
+    
     
   }
 
@@ -90,12 +94,23 @@ export class CreateComponent implements OnInit {
 }
 
 submit(){
-  this.order.codUsuario = this.id;
-  this.order.fechaHoraPedido = this.date();
-  this.order.estadoBodega = 1;
-  this.order.estadoPedido = 1;
-  this.order.estadoProveedor = 1;
+  if(this.tipoPedido == null || this.order.productos.length == 0 || this.codproveedor == null){
+    swal("Información", "Ingresa todos los campos del formulario", "info");
+  }else{
+    this.order.codUsuario = this.id;
+  this.order.fecha = this.date();
+  this.order.codProveedor = this.codproveedor;
+  this.order.estadobodega = 1;
+  this.order.estadopedido = 1;
+  this.order.codPuntoEntrega = 1;
+  this.order.estadoproveedor = 1;
   this.order.tipoPedido = this.tipoPedido;
+  this.orderService.submitOrder(this.order).subscribe(data=>{
+    swal("Pedido", "Realizado con exito", "success");
+  },error=>{
+    swal("Información del pedido", "No se pudo guardar la información, intenta de nuevo", "error");
+  })
+  }
   
 }
 
@@ -110,14 +125,11 @@ delete(codigo){
 
   date(){
     let fecha = new Date();
-    let month = fecha.getMonth()+1;
-    let day = fecha.getDate();
-    let year = fecha.getFullYear();
-    return (year+'/'+month+'/'+day);
+    return (fecha);
   }
 
   clean(){
-    
+   
   }
 
 }

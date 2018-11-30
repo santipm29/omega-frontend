@@ -27,6 +27,7 @@
     "core-js": "^2.5.4",
     "firebase": "^5.5.9",
     "keyboardevent-key-polyfill": "^1.1.0",
+    "ngx-pagination": "^3.2.1",
     "rxjs": "~6.3.3",
     "sweetalert": "^2.1.2",
     "zone.js": "~0.8.26"
